@@ -69,7 +69,7 @@ export default function UploadPage() {
 
     return (
         <div className="max-w-2xl mx-auto">
-            {/* Header */}
+
             <div className="text-center mb-8">
                 <h1 className="text-3xl font-bold mb-2">Upload New Reel</h1>
                 <p className="text-base-content/60">
@@ -80,7 +80,7 @@ export default function UploadPage() {
             <div className="card bg-base-200 shadow-xl">
                 <div className="card-body">
                     <form onSubmit={handleSubmit} className="space-y-6">
-                        {/* File Upload */}
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">Video</span>
@@ -110,7 +110,7 @@ export default function UploadPage() {
                             />
                         </div>
 
-                        {/* Preview */}
+
                         {uploadedFile && (
                             <div className="rounded-xl overflow-hidden bg-base-300">
                                 <video
@@ -121,7 +121,7 @@ export default function UploadPage() {
                             </div>
                         )}
 
-                        {/* Title */}
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">Title</span>
@@ -141,7 +141,7 @@ export default function UploadPage() {
                             />
                         </div>
 
-                        {/* Description */}
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text font-semibold">
@@ -161,7 +161,7 @@ export default function UploadPage() {
                             />
                         </div>
 
-                        {/* Controls Toggle */}
+
                         <div className="form-control">
                             <label className="label cursor-pointer justify-start gap-4">
                                 <input
@@ -175,7 +175,7 @@ export default function UploadPage() {
                             </label>
                         </div>
 
-                        {/* Submit Button */}
+
                         <button
                             type="submit"
                             disabled={isSubmitting || !uploadedFile}

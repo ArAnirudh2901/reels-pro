@@ -3,7 +3,7 @@ import { getToken } from "next-auth/jwt";
 import dbConnect from "@/lib/db";
 import Video from "@/models/Video";
 
-// GET - Fetch all videos
+
 export async function GET() {
     try {
         await dbConnect();
@@ -26,7 +26,7 @@ export async function GET() {
     }
 }
 
-// POST - Create a new video
+
 export async function POST(request) {
     try {
         const token = await getToken({
@@ -41,7 +41,7 @@ export async function POST(request) {
         const body = await request.json();
         const { title, description, videoUrl, thumbnailUrl, controls, transformation } = body;
 
-        // Validation
+
         if (!title || !videoUrl) {
             return NextResponse.json(
                 { error: "Title and video URL are required" },

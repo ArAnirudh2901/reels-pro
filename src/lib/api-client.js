@@ -1,18 +1,10 @@
-/**
- * Centralized API Client for handling HTTP requests
- * Wraps fetch API with error handling and common configurations
- */
+
 class ApiClient {
     constructor(baseUrl = "") {
         this.baseUrl = baseUrl;
     }
 
-    /**
-     * Make a GET request
-     * @param {string} endpoint - API endpoint
-     * @param {object} options - Additional fetch options
-     * @returns {Promise<any>} Response data
-     */
+
     async get(endpoint, options = {}) {
         return this.request(endpoint, {
             method: "GET",
@@ -20,13 +12,7 @@ class ApiClient {
         });
     }
 
-    /**
-     * Make a POST request
-     * @param {string} endpoint - API endpoint
-     * @param {object} data - Request body data
-     * @param {object} options - Additional fetch options
-     * @returns {Promise<any>} Response data
-     */
+
     async post(endpoint, data, options = {}) {
         return this.request(endpoint, {
             method: "POST",
@@ -35,13 +21,7 @@ class ApiClient {
         });
     }
 
-    /**
-     * Make a PUT request
-     * @param {string} endpoint - API endpoint
-     * @param {object} data - Request body data
-     * @param {object} options - Additional fetch options
-     * @returns {Promise<any>} Response data
-     */
+
     async put(endpoint, data, options = {}) {
         return this.request(endpoint, {
             method: "PUT",
@@ -50,12 +30,7 @@ class ApiClient {
         });
     }
 
-    /**
-     * Make a DELETE request
-     * @param {string} endpoint - API endpoint
-     * @param {object} options - Additional fetch options
-     * @returns {Promise<any>} Response data
-     */
+
     async delete(endpoint, options = {}) {
         return this.request(endpoint, {
             method: "DELETE",
@@ -63,12 +38,7 @@ class ApiClient {
         });
     }
 
-    /**
-     * Core request method
-     * @param {string} endpoint - API endpoint
-     * @param {object} options - Fetch options
-     * @returns {Promise<any>} Response data
-     */
+
     async request(endpoint, options = {}) {
         const url = `${this.baseUrl}${endpoint}`;
 
@@ -102,9 +72,7 @@ class ApiClient {
     }
 }
 
-/**
- * Custom API Error class
- */
+
 class ApiError extends Error {
     constructor(message, status, data) {
         super(message);
@@ -114,7 +82,7 @@ class ApiError extends Error {
     }
 }
 
-// Create a singleton instance for the app
+
 const apiClient = new ApiClient("/api");
 
 export { apiClient, ApiClient, ApiError };
